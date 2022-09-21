@@ -8,7 +8,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		LoginGUI telaLogin = new LoginGUI();
-		ControleLogin controleLog = new ControleLogin(telaLogin);
+		ControleLogin controle = new ControleLogin(telaLogin);
+		//System.out.println("passou");
 		telaLogin.setVisible(true);
 
 	}

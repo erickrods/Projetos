@@ -25,7 +25,7 @@ public class AutorGUI extends JFrame {
 	private JTextField textNome;
 	private JTextField textEmail;
 	private JButton btnLimpar;
-	private JButton btnEnviar;
+	private JButton btnEntrar;
 	private JComboBox<String> comboBox;
 
 
@@ -82,20 +82,13 @@ public class AutorGUI extends JFrame {
 		btnLimpar.setBounds(37, 291, 89, 23);
 		contentPane.add(btnLimpar);
 		
-		JButton btnEnviar = new JButton("Enviar");
-		btnEnviar.setBounds(166, 291, 89, 23);
-		contentPane.add(btnEnviar);
+		JButton btnEntrar = new JButton("Enviar");
+		btnEntrar.setBounds(166, 291, 89, 23);
+		contentPane.add(btnEntrar);
 	
 	}
 	
 	//get e sets
-	public JPanel getContentPane() {
-		return contentPane;
-	}
-
-	public void setContentPane(JPanel contentPane) {
-		this.contentPane = contentPane;
-	}
 
 	public JTextField getTextCodigo() {
 		return textCodigo;
@@ -130,11 +123,11 @@ public class AutorGUI extends JFrame {
 	}
 
 	public JButton getBtnEnviar() {
-		return btnEnviar;
+		return btnEntrar;
 	}
 	//metodo
 	public void adicionarOuvinte(ActionListener ouvinte) {
-		btnEnviar.addActionListener(ouvinte);
+		btnEntrar.addActionListener(ouvinte);
 		btnLimpar.addActionListener(ouvinte);
 	}
 

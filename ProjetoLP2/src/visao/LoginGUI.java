@@ -16,7 +16,7 @@ import javax.swing.JButton;
 
 public class LoginGUI extends JFrame {
 	private JPanel contentPane;
-	//private static LoginGUI frame;
+	private static LoginGUI frame;
 	private JTextField textLogin;
 	private JPasswordField textSenha;
 	private JButton btnLimpar;
@@ -61,55 +61,7 @@ public class LoginGUI extends JFrame {
 		btnLimpar.setBounds(34, 149, 89, 23);
 		contentPane.add(btnLimpar);
 	}
-	//get's e set's
-	
-	/**public JTextField getTextLogin() {
-		return textLogin;
-	}
 
-	public void setTextLogin(JTextField textLogin) {
-		this.textLogin = textLogin;
-	}
-
-	public JPasswordField getTextSenha() {
-		return textSenha;
-	}
-
-	public void setTextSenha(JPasswordField textSenha) {
-		this.textSenha = textSenha;
-	}
-
-	public AutorGUI getTela() {
-		return tela;
-	}
-
-	public void setTela(AutorGUI tela) {
-		this.tela = tela;
-	}
-
-	public JPanel getContentPane() {
-		return contentPane;
-	}
-
-	public void setContentPane(JPanel contentPane) {
-		this.contentPane = contentPane;
-	}
-	
-	public JButton getBtnEntrar() {
-		return btnEntrar;
-	}
-
-	public void setBtnEntrar(JButton btnEntrar) {
-		this.btnEntrar = btnEntrar;
-	}
-	
-	public JButton getBtnLimpar() {
-		return btnLimpar;
-	}
-
-	public void setBtnLimpar(JButton btnLimpar) {
-		this.btnLimpar = btnLimpar;
-	}**/
 	//metodo
 	public void adicionarOuvinte(ActionListener ouvinte) {
 		btnEntrar.addActionListener(ouvinte);
@@ -119,14 +71,6 @@ public class LoginGUI extends JFrame {
 		btnEntrar.addActionListener(listBtns);
 		btnLimpar.addActionListener(listBtns);
 	}**/
-
-	public JPanel getContentPane() {
-		return contentPane;
-	}
-
-	public void setContentPane(JPanel contentPane) {
-		this.contentPane = contentPane;
-	}
 
 	public JTextField getTextLogin() {
 		return textLogin;

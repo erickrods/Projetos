@@ -35,27 +35,19 @@ public class ControleLogin {
 					if(loginGUI.getTextSenha().equals("")) {
 						JOptionPane.showMessageDialog(loginGUI.getContentPane(), "Existem campos em branco!", "ERRO", 2);
 					}else {
-						if(loginGUI.getTextLogin().getText().equals("user")) {
-							if(loginGUI.getTextSenha().equals("12345")) {
+						if (loginGUI.getTextLogin().getText().equals("user") && (loginGUI.getTextSenha().getText().equals("12345"))) {
 								loginGUI.dispose();
 								AutorGUI autorGUI = new AutorGUI();
-								ControleAutor controleAutor = new ControleAutor(autorGUI);
+								ControleAutor controle = new ControleAutor(autorGUI);
 								autorGUI.setVisible(true);
-								
-							}else {
+							}else{
 								JOptionPane.showMessageDialog(loginGUI.getContentPane(), "Credenciais  incorretas!", "ERRO", 2);
 								loginGUI.getTextLogin().setText("");
 								loginGUI.getTextSenha().setText("");
 							}
-						}else {
-							JOptionPane.showMessageDialog(loginGUI.getContentPane(), "Credenciais incorretas!", "ERRO", 2);
-							loginGUI.getTextLogin().setText("");
-							loginGUI.getTextSenha().setText("");
 						}
 					}
 				}
 			}
 		}
-		
 	}
-}

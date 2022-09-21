@@ -1,9 +1,9 @@
 package controle;
 
 import java.awt.event.*;
-import modelo.*;
 import javax.swing.JOptionPane;
-import visao.*;
+import visao.LoginGUI;
+import visao.AutorGUI;
 import principal.*;
 import modelo.*;
 
@@ -12,10 +12,9 @@ public class ControleAutor {
 	
 	public ControleAutor(AutorGUI autorGUI) {
 		this.autorGUI = autorGUI;
-		HandlerAutor listBtns = new HandlerAutor();
-		autorGUI.adicionarOuvinte(listBtns);
+		HandlerAutor ouvintes = new HandlerAutor();
+		autorGUI.adicionarOuvinte(ouvintes);
 	}
-	
 	public class HandlerAutor implements ActionListener {
 
 		@Override
