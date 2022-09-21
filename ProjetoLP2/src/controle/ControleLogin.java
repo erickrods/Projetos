@@ -11,8 +11,8 @@ public class ControleLogin {
 
 	public ControleLogin(LoginGUI loginGUI) {
 		this.loginGUI = loginGUI;
-		Handler ouvinte = new Handler();
-		loginGUI.adicionarOuvinte(ouvinte);
+		Handler listner = new Handler();
+		loginGUI.listnerAdd(listner);
 	}
 	
 	public class Handler implements ActionListener {
@@ -22,19 +22,22 @@ public class ControleLogin {
 		
 		//LoginGUI
 			//Botão Limpar
+			/**
+			 * Limpa campos quando acionado o botão limpar.
+			 */
 			if(e.getSource() == loginGUI.getBtnLimpar()) {
 				loginGUI.getTextLogin().setText("");
 				loginGUI.getTextSenha().setText("");
 			}
 			
 			//Botão Entrar
+			/**
+			 * Checa se os campos estao ou não em branco e liberam para checarem o login.
+			 */
 			if(e.getSource() == loginGUI.getBtnEntrar()) {
-				if(loginGUI.getTextLogin().getText().equals("")) {
-					JOptionPane.showMessageDialog(loginGUI.getContentPane(), "Existem campos em branco!", "ERRO", 2);
+				if((loginGUI.getTextLogin().getText().equals("")) || (loginGUI.getTextSenha().equals(""))) {
+					JOptionPane.showMessageDialog(loginGUI.getContentPane(), "OPS!! Existem campo(s) não preeenchidos!", "ERRO", 2);
 				}else {
-					if(loginGUI.getTextSenha().equals("")) {
-						JOptionPane.showMessageDialog(loginGUI.getContentPane(), "Existem campos em branco!", "ERRO", 2);
-					}else {
 						if (loginGUI.getTextLogin().getText().equals("user") && (loginGUI.getTextSenha().getText().equals("12345"))) {
 								loginGUI.dispose();
 								AutorGUI autorGUI = new AutorGUI();
@@ -50,4 +53,3 @@ public class ControleLogin {
 				}
 			}
 		}
-	}

@@ -5,7 +5,9 @@ public class Autor {
 	private String nome;
 	private String email;
 	private String tipoEscrita;
-	
+	/**
+	 * Contrutores de Autor, podendo ser aberto(para inicializacao) ou já preenchido.
+	 */
 	public Autor() {
 		
 	}
@@ -17,7 +19,10 @@ public class Autor {
 		this.email = email;
 		this.tipoEscrita = tipoEscrita;
 	}
-
+	/**
+	 * Métodos get e set
+	 * @return
+	 */
 	public String getCodigo() {
 		return codigo;
 	}

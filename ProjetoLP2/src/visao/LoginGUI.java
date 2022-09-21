@@ -32,7 +32,9 @@ public class LoginGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		
-		//show logjn
+		/**
+		 * Label e campo de login
+		 */
 		JLabel Login = new JLabel("Login");
 		Login.setBounds(53, 11, 106, 22);
 		getContentPane().add(Login);
@@ -42,7 +44,9 @@ public class LoginGUI extends JFrame {
 		getContentPane().add(textLogin);
 		textLogin.setColumns(10);
 		
-		//senha
+		/**
+		 * Label e passwordField 
+		 */
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setBounds(53, 75, 106, 22);
 		getContentPane().add(lblSenha);
@@ -52,7 +56,9 @@ public class LoginGUI extends JFrame {
 		getContentPane().add(textSenha);
 		textSenha.setColumns(10);
 		
-		//Botoes 
+		/**
+		 * Botões entrar e Limpar.
+		 */
 		btnEntrar = new JButton("ENTRAR");
 		btnEntrar.setBounds(133, 149, 106, 23);
 		getContentPane().add(btnEntrar);
@@ -61,17 +67,14 @@ public class LoginGUI extends JFrame {
 		btnLimpar.setBounds(34, 149, 89, 23);
 		contentPane.add(btnLimpar);
 	}
-
-	//metodo
-	public void adicionarOuvinte(ActionListener ouvinte) {
-		btnEntrar.addActionListener(ouvinte);
-		btnLimpar.addActionListener(ouvinte);
+	/**
+	 * Implementando o listner aos botoes.
+	 */
+	public void listnerAdd(ActionListener listner) {
+		btnEntrar.addActionListener(listner);
+		btnLimpar.addActionListener(listner);
 	}
-	/**public void listBtn(ActionListener listBtns) {
-		btnEntrar.addActionListener(listBtns);
-		btnLimpar.addActionListener(listBtns);
-	}**/
-
+	
 	public JTextField getTextLogin() {
 		return textLogin;
 	}

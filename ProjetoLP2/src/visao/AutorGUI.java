@@ -19,18 +19,20 @@ import modelo.*;
 import controle.*;
 
 public class AutorGUI extends JFrame {
-
+	/**
+	 * Declaração de campos usados no frame.
+	 */
 	private JPanel contentPane;
 	private JTextField textCodigo;
 	private JTextField textNome;
 	private JTextField textEmail;
 	private JButton btnLimpar;
 	private JButton btnEntrar;
-	private JComboBox<String> comboBox;
+	private JComboBox comboBox;
 
 
 	/**
-	 * Create the frame.
+	 * Criação do Frame.
 	 */
 	public AutorGUI() {
 		setTitle("Cadastro de autores");
@@ -41,7 +43,9 @@ public class AutorGUI extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		/**
+		 * Posicionando os abjetos window/builder 
+		 */
 		JLabel lblNewLabel = new JLabel("Código");
 		lblNewLabel.setBounds(80, 26, 46, 14);
 		contentPane.add(lblNewLabel);
@@ -64,10 +68,10 @@ public class AutorGUI extends JFrame {
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
-		JComboBox comboBoxEscrita = new JComboBox();
-		comboBoxEscrita.setModel(new DefaultComboBoxModel(new String[] {"", "Literatura Infantil", "Literatura Juvenil", "Literatura Adulta"}));
-		comboBoxEscrita.setBounds(80, 228, 154, 22);
-		contentPane.add(comboBoxEscrita);
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"", "Literatura Infantil", "Literatura Juvenil", "Literatura Adulta"}));		
+		comboBox.setBounds(80, 228, 154, 22);
+		contentPane.add(comboBox);
 		
 		textEmail = new JTextField();
 		textEmail.setBounds(80, 163, 154, 20);
@@ -78,18 +82,20 @@ public class AutorGUI extends JFrame {
 		lblTipoDeEscrita.setBounds(80, 203, 86, 14);
 		contentPane.add(lblTipoDeEscrita);
 		
-		JButton btnLimpar = new JButton("Limpar");
+		btnLimpar = new JButton("Limpar");
 		btnLimpar.setBounds(37, 291, 89, 23);
 		contentPane.add(btnLimpar);
 		
-		JButton btnEntrar = new JButton("Enviar");
+		btnEntrar = new JButton("Enviar");
 		btnEntrar.setBounds(166, 291, 89, 23);
 		contentPane.add(btnEntrar);
 	
 	}
 	
-	//get e sets
-
+	/**
+	 * Métodos get/set.
+	 * @return
+	 */
 	public JTextField getTextCodigo() {
 		return textCodigo;
 	}
@@ -125,10 +131,15 @@ public class AutorGUI extends JFrame {
 	public JButton getBtnEnviar() {
 		return btnEntrar;
 	}
-	//metodo
-	public void adicionarOuvinte(ActionListener ouvinte) {
-		btnEntrar.addActionListener(ouvinte);
-		btnLimpar.addActionListener(ouvinte);
+	
+	/**
+	 * Método para alocarmos o Listner
+	 * @param ouvinte
+	 */
+	
+	public void listnerAdd(ActionListener listner) {
+		btnEntrar.addActionListener(listner);
+		btnLimpar.addActionListener(listner);
 	}
 
 }
