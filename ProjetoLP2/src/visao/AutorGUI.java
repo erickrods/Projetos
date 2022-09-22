@@ -1,3 +1,8 @@
+/**
+ * Classe onde estão as caracteristicas da janela de cadastro de autor
+ * @author Erick Rodrigues e Eucarli Sampaio
+ */
+
 package visao;
 
 import java.awt.EventQueue;
@@ -18,21 +23,24 @@ import principal.*;
 import modelo.*;
 import controle.*;
 
+/**
+ * Classe responsável por representar graficamente a janela e os campos onde
+ * o usuario irá inserir os dados do(s) autor(es), assim como um botao Limpar,
+ * que excluirá as informações já digitadas nos campos e um botão Enviar, que
+ * fará o envio das informações digitadas
+ */
 public class AutorGUI extends JFrame {
-	/**
-	 * Declaração de campos usados no frame.
-	 */
 	private JPanel contentPane;
 	private JTextField textCodigo;
 	private JTextField textNome;
 	private JTextField textEmail;
 	private JButton btnLimpar;
 	private JButton btnEntrar;
-	private JComboBox comboBox;
+	private JComboBox<Object> comboBox;
 
 
 	/**
-	 * Criação do Frame.
+	 * Classe para a criação da janela de autor e instanciamento de suas caracteristicas
 	 */
 	public AutorGUI() {
 		setTitle("Cadastro de autores");
@@ -43,9 +51,7 @@ public class AutorGUI extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		/**
-		 * Posicionando os abjetos window/builder 
-		 */
+		
 		JLabel lblNewLabel = new JLabel("Código");
 		lblNewLabel.setBounds(80, 26, 46, 14);
 		contentPane.add(lblNewLabel);
@@ -68,8 +74,8 @@ public class AutorGUI extends JFrame {
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
-		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"", "Literatura Infantil", "Literatura Juvenil", "Literatura Adulta"}));		
+		comboBox = new JComboBox<Object>();
+		comboBox.setModel(new DefaultComboBoxModel<Object>(new String[] {"", "Literatura Infantil", "Literatura Juvenil", "Literatura Adulta"}));		
 		comboBox.setBounds(80, 228, 154, 22);
 		contentPane.add(comboBox);
 		
@@ -93,53 +99,84 @@ public class AutorGUI extends JFrame {
 	}
 	
 	/**
-	 * Métodos get/set.
-	 * @return
+	 *  Método para obter o código do autor
+	 * @return textCodigo
 	 */
 	public JTextField getTextCodigo() {
 		return textCodigo;
 	}
 
+	/**
+	 * Método para configurar o código do autor
+	 * @param textCodigo codigo que identifica o autor
+	 */
 	public void setTextCodigo(JTextField textCodigo) {
 		this.textCodigo = textCodigo;
 	}
-
+	
+	/**
+	 * Método para obter o nome do autor
+	 * @return textNome
+	 */
 	public JTextField getTextNome() {
 		return textNome;
 	}
 
+	/**
+	 * Método para configurar o nome do autor
+	 * @param textNome nome do autor
+	 */
 	public void setTextNome(JTextField textNome) {
 		this.textNome = textNome;
 	}
 
+	/**
+	 * Método para obter o email do autor
+	 * @return textEmail
+	 */
 	public JTextField getTextEmail() {
 		return textEmail;
 	}
 
+	/**
+	 * Método para configurar o email do autor
+	 * @param textEmail email do autor
+	 */
 	public void setTextEmail(JTextField textEmail) {
 		this.textEmail = textEmail;
 	}
 
-	public JComboBox getComboBox() {
+	/**
+	 * Método para obter o tipo de literatura escrita pelo autor
+	 * @return comboBox
+	 */
+	public JComboBox<Object> getComboBox() {
 		return comboBox;
 	}
 
+	/**
+	 * Metodo que era limpar todos os campos da janela
+	 * @return btnLimpar
+	 */
 	public JButton getBtnLimpar() {
 		return btnLimpar;
 	}
 
+	/**
+	 * Metodo que enviará as informações digitadas nos campos
+	 * @return btnEntrar
+	 */
 	public JButton getBtnEnviar() {
 		return btnEntrar;
 	}
 	
 	/**
-	 * Método para alocarmos o Listner
-	 * @param ouvinte
+	 * Recebe como parametro a variavel listener
+	 * @param listener
 	 */
-	
-	public void listnerAdd(ActionListener listner) {
-		btnEntrar.addActionListener(listner);
-		btnLimpar.addActionListener(listner);
+	public void listenerAdd(ActionListener listener) {
+		btnEntrar.addActionListener(listener);
+		btnLimpar.addActionListener(listener);
 	}
 
 }
